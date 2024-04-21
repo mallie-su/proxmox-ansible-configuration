@@ -1,0 +1,6 @@
+---
+- name: Install wireguard
+  hosts: vpn
+  remote_user: root
+  roles:
+    - githubixx.ansible_role_wireguard

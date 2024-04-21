@@ -1,0 +1,10 @@
+---
+- name: Update debian systems
+  hosts: debian
+  remote_user: root
+
+  tasks:
+    - name: Update apt
+      ansible.builtin.apt:
+        upgrade: dist
+        update_cache: true

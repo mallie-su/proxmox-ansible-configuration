@@ -1,0 +1,12 @@
+plugin: community.general.proxmox
+url: https://pve.home:8006
+validate_certs: false
+user: ansible@pve
+want_facts: true
+keyed_groups:
+    # proxmox_tags_parsed is an example of a fact only returned when 'want_facts=true'
+  - key: proxmox_tags_parsed
+    separator: ""
+groups:
+  pihole: "'pihole' in (proxmox_tags_parsed|list)"
+  vpn: "'vpn' in (proxmox_tags_parsed|list)"
